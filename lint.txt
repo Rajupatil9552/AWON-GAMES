@@ -1,0 +1,116 @@
+
+D:\Webisdom\Awon\Awon_Games\src\components\Antigravity.jsx
+   1:1   error  Definition for rule 'react/no-unknown-property' was not found                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             react/no-unknown-property
+  37:23  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  35 |
+  36 |         for (let i = 0; i < count; i++) {
+> 37 |             const t = Math.random() * 100;
+     |                       ^^^^^^^^^^^^^ Cannot call impure function
+  38 |             const factor = 20 + Math.random() * 100;
+  39 |             const speed = 0.01 + Math.random() / 200;
+  40 |             const xFactor = -50 + Math.random() * 100;                                                                                 react-hooks/purity
+  38:33  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  36 |         for (let i = 0; i < count; i++) {
+  37 |             const t = Math.random() * 100;
+> 38 |             const factor = 20 + Math.random() * 100;
+     |                                 ^^^^^^^^^^^^^ Cannot call impure function
+  39 |             const speed = 0.01 + Math.random() / 200;
+  40 |             const xFactor = -50 + Math.random() * 100;
+  41 |             const yFactor = -50 + Math.random() * 100;                react-hooks/purity
+  39:34  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  37 |             const t = Math.random() * 100;
+  38 |             const factor = 20 + Math.random() * 100;
+> 39 |             const speed = 0.01 + Math.random() / 200;
+     |                                  ^^^^^^^^^^^^^ Cannot call impure function
+  40 |             const xFactor = -50 + Math.random() * 100;
+  41 |             const yFactor = -50 + Math.random() * 100;
+  42 |             const zFactor = -50 + Math.random() * 100;  react-hooks/purity
+  40:35  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  38 |             const factor = 20 + Math.random() * 100;
+  39 |             const speed = 0.01 + Math.random() / 200;
+> 40 |             const xFactor = -50 + Math.random() * 100;
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  41 |             const yFactor = -50 + Math.random() * 100;
+  42 |             const zFactor = -50 + Math.random() * 100;
+  43 |                                            react-hooks/purity
+  41:35  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  39 |             const speed = 0.01 + Math.random() / 200;
+  40 |             const xFactor = -50 + Math.random() * 100;
+> 41 |             const yFactor = -50 + Math.random() * 100;
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  42 |             const zFactor = -50 + Math.random() * 100;
+  43 |
+  44 |             const x = (Math.random() - 0.5) * width;                                            react-hooks/purity
+  42:35  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  40 |             const xFactor = -50 + Math.random() * 100;
+  41 |             const yFactor = -50 + Math.random() * 100;
+> 42 |             const zFactor = -50 + Math.random() * 100;
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  43 |
+  44 |             const x = (Math.random() - 0.5) * width;
+  45 |             const y = (Math.random() - 0.5) * height;                                            react-hooks/purity
+  44:24  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  42 |             const zFactor = -50 + Math.random() * 100;
+  43 |
+> 44 |             const x = (Math.random() - 0.5) * width;
+     |                        ^^^^^^^^^^^^^ Cannot call impure function
+  45 |             const y = (Math.random() - 0.5) * height;
+  46 |             const z = (Math.random() - 0.5) * 20;
+  47 |                                                                                                                   react-hooks/purity
+  45:24  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  43 |
+  44 |             const x = (Math.random() - 0.5) * width;
+> 45 |             const y = (Math.random() - 0.5) * height;
+     |                        ^^^^^^^^^^^^^ Cannot call impure function
+  46 |             const z = (Math.random() - 0.5) * 20;
+  47 |
+  48 |             const randomRadiusOffset = (Math.random() - 0.5) * 2;                                                                                                        react-hooks/purity
+  46:24  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  44 |             const x = (Math.random() - 0.5) * width;
+  45 |             const y = (Math.random() - 0.5) * height;
+> 46 |             const z = (Math.random() - 0.5) * 20;
+     |                        ^^^^^^^^^^^^^ Cannot call impure function
+  47 |
+  48 |             const randomRadiusOffset = (Math.random() - 0.5) * 2;
+  49 |                                                                                                        react-hooks/purity
+  48:41  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  46 |             const z = (Math.random() - 0.5) * 20;
+  47 |
+> 48 |             const randomRadiusOffset = (Math.random() - 0.5) * 2;
+     |                                         ^^^^^^^^^^^^^ Cannot call impure function
+  49 |
+  50 |             temp.push({
+  51 |                 t,                                                                                                                                                       react-hooks/purity
+
+✖ 11 problems (11 errors, 0 warnings)
+
