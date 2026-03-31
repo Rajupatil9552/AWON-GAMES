@@ -7,8 +7,9 @@ import GamesPage from './pages/GamesPage';
 import CategoriesPage from './pages/CategoriesPage';
 import PromotionsPage from './pages/PromotionsPage';
 import GameDetailPage from './pages/GameDetailPage';
-import GamePlayPage from './pages/GamePlayPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import CollectionsPage from './pages/CollectionsPage';
+import UserDashboardPage from './pages/UserDashboardPage';
 
 function App() {
   return (
@@ -19,11 +20,12 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/games" element={<GamesPage />} />
           <Route path="/games/:id" element={<GameDetailPage />} />
-          <Route path="/play/:id" element={<GamePlayPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="/promotions" element={<PromotionsPage />} />
+          <Route path="/collections" element={<CollectionsPage />} />
+          <Route path="/dashboard" element={<UserDashboardPage />} />
         </Routes>
         <Footer />
       </div>

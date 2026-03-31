@@ -1,14 +1,7 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
-import GameCard from '../components/GameCard';
-import { GAMES } from '../data/games';
-
-const trendingGames = GAMES.slice(0, 6).map(game => ({
-    title: game.title,
-    thumbnail: game.thumbnail,
-    rating: game.rating,
-    gameUrl: `/games/${game.slug}`
-}));
+import TrendingGamesSection from '../components/TrendingGamesSection';
+import DailyChallengeSection from '../components/DailyChallengeSection';
 
 const MainLayoutPage = () => {
     return (
@@ -18,21 +11,10 @@ const MainLayoutPage = () => {
             <div className="bg-background-dark relative border-t border-primary/20 shadow-[0_-10px_30px_rgba(43,238,121,0.05)]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
                     {/* Trending Games Component Grid */}
-                    <h2 className="text-3xl font-bold text-white mb-8 group-hover:text-primary transition-colors flex items-center gap-2">
-                        <span className="material-symbols-outlined text-primary text-3xl">local_fire_department</span>
-                        Trending Games
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {trendingGames.map((game, idx) => (
-                            <GameCard
-                                key={idx}
-                                title={game.title}
-                                thumbnail={game.thumbnail}
-                                rating={game.rating}
-                                gameUrl={game.gameUrl}
-                            />
-                        ))}
-                    </div>
+                    <TrendingGamesSection />
+
+                    {/* Daily Challenge Section */}
+                    <DailyChallengeSection />
 
                     {/* Secondary Content Area */}
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 pt-8">

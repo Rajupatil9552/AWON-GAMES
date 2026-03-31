@@ -26,31 +26,44 @@ export const Navbar = ({ children, className }) => {
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
-          ? React.cloneElement(child, { visible })
+          ? typeof child.type === "string" 
+            ? child 
+            : React.cloneElement(child, { visible })
           : child
       )}
     </motion.div>
   );
 };
 
-export const NavBody = ({ children, visible, className }) => (
-  <motion.div
-    animate={{
-      width: visible ? "75%" : "100%",
-      y: visible ? 0 : 0,
-    }}
-    transition={{ type: "spring", stiffness: 200, damping: 30 }}
-    className={cn(
-      "mx-auto hidden h-16 max-w-7xl items-center justify-between px-8 lg:flex transition-all",
-      visible
-        ? "rounded-full border border-primary/20 bg-background-dark/95 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.8)]"
-        : "border-b border-primary/10 bg-background-dark/90 backdrop-blur-md",
-      className
-    )}
-  >
-    {children}
-  </motion.div>
-);
+export const NavBody = ({ children, visible, className }) => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <motion.div
+      animate={{
+        width: visible ? (isMobile ? "95%" : "75%") : "100%",
+        y: visible ? 0 : 0,
+      }}
+      transition={{ type: "spring", stiffness: 200, damping: 30 }}
+      className={cn(
+        "mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8 transition-all",
+        visible
+          ? "rounded-full border border-primary/20 bg-background-dark/95 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.8)]"
+          : "border-b border-primary/10 bg-background-dark/90 backdrop-blur-md",
+        className
+      )}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export const NavItems = ({ items }) => {
   const [hovered, setHovered] = useState(null);
